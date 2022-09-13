@@ -25,6 +25,7 @@ router.post('/add_employee_details',async(req,res)=>{
 })
 
 router.get('/get_employee_details',(req,res)=>{
+    console.log('entry request');
 const {page,size,first_name,last_name,date_of_birth,date_enrolled}=req.query
 let filter_payload={}
 
