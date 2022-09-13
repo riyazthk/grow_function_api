@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 require("../src/db/mongoose");
 
 var cors = require('cors');
-app.use(cors());
+
 const userRouter = require("./routers/users");
 const taskRouter = require("./routers/task");
 const employeeRouter=require('./routers/employee')
@@ -11,6 +11,7 @@ const employeeRouter=require('./routers/employee')
 var port = process.env.PORT || 8080;
 var app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(userRouter);
 app.use(taskRouter);
