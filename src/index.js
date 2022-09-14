@@ -4,8 +4,7 @@ require("../src/db/mongoose");
 
 var cors = require('cors');
 
-const userRouter = require("./routers/users");
-const taskRouter = require("./routers/task");
+
 const employeeRouter=require('./routers/employee')
 
 var port = process.env.PORT || 8080;
@@ -13,8 +12,6 @@ var app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(userRouter);
-app.use(taskRouter);
 app.use(employeeRouter)
 
 app.all("*", (req, res) => {
